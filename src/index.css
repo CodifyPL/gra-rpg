@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Jersey';
+    src: url('./font/Jersey10-Regular.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font globally or to specific elements */
+body {
+    font-family: 'Jersey', sans-serif;
+    margin: 0px;
+    font-size: 32px;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0d8b0; /* Gothic-style text color */
+}
+
+#map {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+  color: #e0d8b0; /* Text color */
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  overflow: auto;
+  border: 3px solid #705438; /* Medieval-style border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+  padding: 15px;
+  font-size: 24px; /* Slightly smaller font for map */
+}
+
+#statistics {
+  position: fixed; /* Fixed to the viewport */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by 50% of its own size */
+  width: 30%; /* Adjusted width */
+  height: 50%; /* Adjusted height */
+  background-color: rgba(20, 20, 20, 0.95); /* Darker background */
+  color: #e0d8b0; /* Text color */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent */
+  transition: visibility 0s, opacity 0.3s ease-in-out; /* Smooth transition */
+  z-index: 2000; /* Ensure it is above the canvas */
+  overflow: auto;
+  border: 3px solid #705438; /* Medieval-style border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+  padding: 15px;
+  font-size: 20px; /* Adjust font size */
+}
+
+#inventory {
+  position: fixed; /* Fixed to the viewport */
+  display: grid;
+  bottom: 40%;
+  right: 2%; /* Align to the right with a small margin */
+  width: 30%; /* Adjusted width */
+  height: 50%; /* Adjusted height */
+  background-color: rgba(30, 30, 30, 0.95); /* Darker background */
+  color: #e0d8b0; /* Text color */
+  display: grid; /* Ensure grid layout is applied */
+  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+  gap: 5px; /* Space between items */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent */
+  z-index: 2000; /* Ensure it is above the canvas */
+  overflow: auto;
+  border: 3px solid #705438; /* Medieval-style border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+  padding: 15px;
+  font-size: 20px; /* Adjust font size */
+}
+
+.inventory-item {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(50, 50, 50, 0.9); /* Item background */
+  border: 2px solid #705438; /* Border for items */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.inventory-item:hover {
+  border-color: #a67c52; /* Highlight border on hover */
+}
+
+#item-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%; /* Narrower width */
+  background-color: rgba(20, 20, 20, 0.95); /* Darker background */
+  color: #e0d8b0; /* Text color */
+  border: 3px solid #705438; /* Medieval-style border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+  padding: 20px;
+  text-align: center;
+  display: none; /* Hidden by default */
+  z-index: 3000; /* Ensure it is above other elements */
+}
+
+#item-details img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#item-details h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+#item-details p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* Utility class to show hidden elements */
+.show {
+  display: block !important;
+}
+
+#inventory.show, #statistics.show {
+  visibility: visible; /* Make visible */
+  opacity: 1; /* Fully opaque */
+}
+
+/* Add hover effects for interactive elements */
+#map:hover, #statistics:hover, #inventory:hover {
+}
